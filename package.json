@@ -1,0 +1,15 @@
+{
+  "name": "bookmarket-refacto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+ "scripts": {
+  "build:css": "tailwindcss build -i  ./assets/css/input.css -o ./assets/css/output.css --watch"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
