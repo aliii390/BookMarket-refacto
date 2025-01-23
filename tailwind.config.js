@@ -10,7 +10,7 @@ module.exports = {
         principale : ["Lexend", "sans-serif"]
       },
       backgroundImage: {
-        'imageun' : "url('../../assets/img/accueil.jpg')",
+        'imageun' : "url('./assets/img/home.jpg')",
       }
     },
   },

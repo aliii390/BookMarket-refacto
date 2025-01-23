@@ -1,7 +1,6 @@
 
 <?php  
-
-require_once '../../connect/connectDB.php';
+include_once '../utils/autoloader.php';
 
 session_start();
 // var_dump($_SESSION);
@@ -26,7 +25,7 @@ session_start();
     <link rel="stylesheet" href="../../assets/css/output.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="../../assets/js/burger.js"></script>
+    <script defer src="../assets/js/burger.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -34,7 +33,7 @@ session_start();
 
 <header class="bg-[#FDEDD5]  flex items-center p-3 justify-between gap-4 sm:justify-between sm:px-6 xl:justify-around ">
   <!-- Logo -->
-  <img src="../../assets/img/logo.png" alt="Logo" class="w-32">
+  <img src="../assets/img/LogoItem.png" alt="Logo" class="w-32">
 
   <!-- Input de recherche -->
   
@@ -95,7 +94,8 @@ session_start();
 
   <!-- Logo dans le menu -->
   <div class="text-center py-6 border-b border-gray-300">
-    <img src="../../assets/img/logo.png" alt="Logo" class="w-36">
+    <!-- <img src="../assets/img/logo.png" alt="Logo" class="w-36"> -->
+     <img src="../assets/img/logo.png" alt="" class="w-36">
   </div>
 
   <!-- Liens du menu -->
@@ -154,7 +154,7 @@ session_start();
   <div class="flex flex-col gap-8 items-center lg:flex-row lg:justify-center lg:gap-12 lg:w-full">
     <!-- Article 1 -->
     <article class="flex gap-6 justify-center items-center bg-white rounded-lg p-4 shadow-md lg:flex-col lg:gap-4 lg:items-center lg:w-[300px]">
-      <img src="../../assets/img/livre.jpg" alt="Livre" class="w-[150px] h-auto rounded-lg shadow-lg">
+      <img src="../assets/img/livre.jpg" alt="Livre" class="w-[150px] h-auto rounded-lg shadow-lg">
       <div class="flex flex-col items-start lg:items-center lg:text-center">
         <h3 class="font-principale text-[18px] font-semibold">Les Couloirs du Destin</h3>
         <p class="font-principale text-[15px] text-gray-600">AUTEUR: Arthur Belmont</p>
@@ -166,7 +166,7 @@ session_start();
 
     <!-- Article 2 -->
     <article class="flex gap-6 justify-center items-center bg-white rounded-lg p-4 shadow-md lg:flex-col lg:gap-4 lg:items-center lg:w-[300px]">
-      <img src="../../assets/img/livre.jpg" alt="Livre" class="w-[150px] h-auto rounded-lg shadow-lg">
+      <img src="../assets/img/livre.jpg" alt="Livre" class="w-[150px] h-auto rounded-lg shadow-lg">
       <div class="flex flex-col items-start lg:items-center lg:text-center">
         <h3 class="font-principale text-[18px] font-semibold">Les Couloirs du Destin</h3>
         <p class="font-principale text-[15px] text-gray-600">AUTEUR: Arthur Belmont</p>
@@ -178,7 +178,7 @@ session_start();
 
     <!-- Article 3 -->
     <article class="flex gap-6 justify-center items-center bg-white rounded-lg p-4 shadow-md lg:flex-col lg:gap-4 lg:items-center lg:w-[300px]">
-      <img src="../../assets/img/livre.jpg" alt="Livre" class="w-[150px] h-auto rounded-lg shadow-lg">
+      <img src="../assets/img/livre.jpg" alt="Livre" class="w-[150px] h-auto rounded-lg shadow-lg">
       <div class="flex flex-col items-start lg:items-center lg:text-center">
         <h3 class="font-principale text-[18px] font-semibold">Les Couloirs du Destin</h3>
         <p class="font-principale text-[15px] text-gray-600">AUTEUR: Arthur Belmont</p>
@@ -198,7 +198,7 @@ session_start();
 
 
     <footer class="bg-[#2A3D37] flex justify-between items-center p-4">
-  <img src="../../assets/img/footer.png" alt="Logo" class="">
+  <img src="../assets/img/footer.png" alt="Logo" class="">
   <p class="text-white w-[50%] text-right">© 2025 BookMarket, <span class="text-cyan-600">coded by</span> Ali</p>
 </footer>
 
