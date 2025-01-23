@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once '../utils/autoloader.php';
 
@@ -6,30 +6,36 @@ session_start();
 
 $userRepository = new UserRepository();
 
-// $user = $userRepository->createUser($user);
+$user = $userRepository->findByEmail($_POST['email']);
 
 
-
-if(!$user){
-    $userData = [
-        'nom' => $_POST['nom'],
-        'prenom' => $_POST['prenom'],
-        'email' => $_POST['email'],
-        'mdp' => $_POST['mdp'],
-        'telephone' => $_POST['telephone'],
-        'role' => $_POST['role']
-        
-    ];
-    var_dump($userData);
-die();
-// mon var dump récup tout mais y'a encore une  erreu via la variable 
-
-    if($_POST['role'] === "Vendeur"){
-        $user->AdressePro();
-    }
-
-
-    $userRepository->createUser($userData);
-
-    $_SESSION['user'] = $user;
+if ($user) {
+    header("Location: ../public/inscription.php?error=emailexiste");
+    exit;
 }
+
+$hash = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+
+$user = new User($_POST['nom'], $_POST['prenom'], $_POST['email'], $hash, $_POST['telephone'], $_POST['role']);
+
+
+if ($user->getRole() === "Vendeur") {
+    $userProRepository = new UserProRepository();
+    $userPro = new UserPro($_POST['companyName'], $_POST['companyAddress']);
+    $idUserPro = $userProRepository->createAdressePro($userPro);
+
+    $userPro->setId($idUserPro);
+    $user->setUserPro($userPro);
+}
+
+
+$idUser = $userRepository->createUser($user);
+
+$user->setId($idUser);
+
+
+
+$_SESSION['user'] = $user;
+
+header("Location: ../public/accueil.php");
+exit;

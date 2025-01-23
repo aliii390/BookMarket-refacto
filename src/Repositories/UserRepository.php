@@ -1,9 +1,10 @@
 
 
 
-<?php 
+<?php
 
-class UserRepository extends AbstractRepository{
+class UserRepository extends AbstractRepository
+{
 
     public function __construct()
     {
@@ -13,15 +14,16 @@ class UserRepository extends AbstractRepository{
 
 
 
-    public function findByUser(string $user): ?User{
+    public function findByEmail(string $email): ?User
+    {
 
         $stmt = $this->pdo->prepare("SELECT * FROM user WHERE email = :email");
-        $stmt->bindParam(":email" , $user , PDO::PARAM_STR);
+        $stmt->bindParam(":email", $email, PDO::PARAM_STR);
         $stmt->execute();
-             
+
         $data = $stmt->fetch();
 
-        if(!$data){
+        if (!$data) {
             return null;
         }
 
@@ -29,24 +31,22 @@ class UserRepository extends AbstractRepository{
         return $data;
     }
 
-    public function createUser(array $userData) {
-        $sql = "INSERT INTO user (nom, prenom, email, mdp, telephone) VALUES (:nom, :prenom, :email, :mdp, :telephone)";
-        
+    public function createUser(User $user): int
+    {
+        $sql = "INSERT INTO user (nom, prenom, email, mdp, telephone , role , id_user_pro) VALUES (:nom, :prenom, :email, :mdp, :telephone , :role , :id_user_pro)";
+
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':nom', $userData['nom']);
-        $stmt->bindParam(':prenom', $userData['prenom']);
-        $stmt->bindParam(':email', $userData['email']);
-        $stmt->bindParam(':mdp', $userData['mdp']);
-        $stmt->bindParam(':telephone', $userData['telephone']);
-        $stmt->execute();
-    }
-
-
-    public function AdressePro($dataPro){
-        $stmt = $this->pdo->prepare("INSERT INTO user_pro (nom_entreprise, adresse_entreprise) VALUES (:nom_entreprise, :adresse_entreprise)");
         $stmt->execute([
-            'nom_entreprise' => $dataPro['nom_entreprise'],
-            'adresse_entreprise' => $dataPro['adresse_entreprise']
+            ':nom' => $user->getNom(),
+            ':prenom' => $user->getPrenom(),
+            ':email' => $user->getEmail(),
+            ':mdp' => $user->getMdp(),
+            ':telephone' => $user->getTelephone(),
+            ':role' => $user->getRole(),
+            ':id_user_pro'=> $user->getUserPro()->getId()
+
         ]);
+
+        return $this->pdo->lastInsertId();
     }
 }

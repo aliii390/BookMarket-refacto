@@ -2,7 +2,8 @@
 module.exports = {
   content: [
     "./index.php",
-    "./front/**/*.php"
+    "./public/**/*.php",
+    "./public/*.php"
   ],
   theme: {
     extend: { 
@@ -10,7 +11,7 @@ module.exports = {
         principale : ["Lexend", "sans-serif"]
       },
       backgroundImage: {
-        'imageun' : "url('./assets/img/home.jpg')",
+        'imageun' : "url('../img/home.jpg')",
       }
     },
   },

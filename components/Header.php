@@ -2,11 +2,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookMarket</title>
-    <link rel="stylesheet" href="./assets/css/output.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="../assets/js/burger.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/output.css">
+
 </head>
 
 
@@ -74,7 +74,7 @@
 
   <!-- Logo dans le menu -->
   <div class="text-center py-6 border-b border-gray-300">
-    <img src="./assets/img/logo.png" alt="Logo" class="w-36">
+    <img src="../assets/img/LogoItem.png" alt="Logo" class="w-36">
   </div>
 
   <!-- Liens du menu -->

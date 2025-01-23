@@ -4,29 +4,19 @@
 class UserMapper{
     
 
-    public static function MapToObject(array $data)
+    public static function MapToObject(array $data) : User
     {
 
-
-        if(isset($data['id_user_pro'])){
-           $user = new Vendeur(
-                $data['id'],
-                $data['nom_entreprise'],
-                $data['adresse_entreprise'],
-               
-            );
-        } else{
-           $user = new Client (
-                $data['id'],
-                $data['nom'],
-                $data['prenom'],
-                $data['email'],
-                $data['mdp'],
-                $data['telephone'],
-                $data['role'],
-            );
-        }
-     return $user;
+        return new User(
+            $data['nom'],
+            $data['prenom'],
+            $data['email'],
+            $data['mdp'],
+            $data['telephone'],
+            $data['role'],
+            $data['id'],
+            $data['user_pro'],
+        );
     }
 }
 

@@ -41,11 +41,13 @@ session_start();
                     placeholder="Prénom"
                     class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder:font-principale">
 
+
+                   
                 <input
                     type="email"
                     name="email"
                     placeholder="Adresse Mail"
-                    class="w-full p-3 border  border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder:font-principale">
+                    class="w-full p-3 border   <?php echo isset($_GET['error'])  && $_GET['error'] === "emailexiste" ?  "border-red-600" :  "border-gray-300 "?>  rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder:font-principale">
 
                 <input
                     type="text"

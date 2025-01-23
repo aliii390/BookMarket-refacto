@@ -1,20 +1,21 @@
 
 
-<?php 
+<?php
 
 
- abstract class User{
-    protected int $id;
-    protected string $nom;
-    protected string $prenom ;
-    protected string $email ; 
-    protected string $mdp ;
-    protected string $telephone ; 
-    protected string $role ;
-    protected int $idUserPro;
+final class User
+{
+    private ?int $id;
+    private string $nom;
+    private string $prenom;
+    private string $email;
+    private string $mdp;
+    private string $telephone;
+    private string $role;
+    private ?UserPro $userPro;
 
 
-    public function __construct($id, $nom , $prenom , $email , $mdp, $telephone, $role , $idUserPro)
+    public function __construct(string $nom, string $prenom, string $email, string $mdp, string  $telephone, string $role, ?int $id = null, ?UserPro $userPro = null)
     {
         $this->id = $id;
         $this->nom = $nom;
@@ -23,62 +24,98 @@
         $this->mdp = $mdp;
         $this->telephone = $telephone;
         $this->role = $role;
-        $this->idUserPro = $idUserPro;
+        $this->userPro = $userPro;
     }
+
+
+
+    /**
+     * Get the value of id
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */
+    public function setId($id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
 
     /**
      * Get the value of nom
-     */ 
-    public function getNom()
+     */
+    public function getNom(): string
     {
         return $this->nom;
     }
 
     /**
      * Get the value of prenom
-     */ 
-    public function getPrenom()
+     */
+    public function getPrenom(): string
     {
         return $this->prenom;
     }
 
     /**
      * Get the value of email
-     */ 
-    public function getEmail()
+     */
+    public function getEmail(): string
     {
         return $this->email;
     }
 
     /**
      * Get the value of mdp
-     */ 
-    public function getMdp()
+     */
+    public function getMdp(): string
     {
         return $this->mdp;
     }
 
-        /**
-         * Get the value of telephone
-         */ 
-        public function getTelephone()
-        {
-                return $this->telephone;
-        }
-
-        /**
-         * Get the value of role
-         */ 
-        public function getRole()
-        {
-                return $this->role;
-        }
+    /**
+     * Get the value of telephone
+     */
+    public function getTelephone(): string
+    {
+        return $this->telephone;
+    }
 
     /**
-     * Get the value of idUserPro
-     */ 
-    public function getIdUserPro()
+     * Get the value of role
+     */
+    public function getRole(): string
     {
-        return $this->idUserPro;
+        return $this->role;
+    }
+
+    /**
+     * Get the value of userPro
+     */
+    public function getUserPro(): UserPro
+    {
+        return $this->userPro;
+    }
+
+    /**
+     * Set the value of userPro
+     *
+     * @return  self
+     */
+    public function setUserPro($userPro): self
+    {
+        $this->userPro = $userPro;
+
+        return $this;
     }
 }
