@@ -16,7 +16,7 @@ if ($user) {
 
 $hash = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-$user = new User($_POST['nom'], $_POST['prenom'], $_POST['email'], $hash, $_POST['telephone'], $_POST['role']);
+$user = new User($_POST['nom'], $_POST['prenom'], $_POST['email'], $hash, $_POST['telephone'], $_POST['role']); 
 
 
 if ($user->getRole() === "Vendeur") {

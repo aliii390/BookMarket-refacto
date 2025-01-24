@@ -33,8 +33,8 @@ class UserRepository extends AbstractRepository
 
     public function createUser(User $user): int
     {
-        $sql = "INSERT INTO user (nom, prenom, email, mdp, telephone , role , id_user_pro) VALUES (:nom, :prenom, :email, :mdp, :telephone , :role , :id_user_pro)";
-
+        $sql = "INSERT INTO user (nom, prenom, email, mdp, telephone, role, id_user_pro) VALUES (:nom, :prenom, :email, :mdp, :telephone, :role, :id_user_pro)";
+    
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([
             ':nom' => $user->getNom(),
@@ -43,10 +43,9 @@ class UserRepository extends AbstractRepository
             ':mdp' => $user->getMdp(),
             ':telephone' => $user->getTelephone(),
             ':role' => $user->getRole(),
-            ':id_user_pro'=> $user->getUserPro()->getId()
-
+            ':id_user_pro' => $user->getUserPro() ? $user->getUserPro()->getId() : null
         ]);
-
+    
         return $this->pdo->lastInsertId();
     }
 }

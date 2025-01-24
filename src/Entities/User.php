@@ -102,7 +102,7 @@ final class User
     /**
      * Get the value of userPro
      */
-    public function getUserPro(): UserPro
+    public function getUserPro(): ?UserPro
     {
         return $this->userPro;
     }
