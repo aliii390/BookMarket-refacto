@@ -20,7 +20,7 @@ if (!$user) {
 // si mdp incorrect je le renvoie sur la page de co avc une erreur
 if (!password_verify($_POST['mdp'], $user->getMdp())) {
 
-    header("Location: ../public/connexion.php?error=wrongpassword");
+    header("Location: ../public/connexion.php?error=emailoumdpinvalid");
     exit;
 }
 

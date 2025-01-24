@@ -4,5 +4,5 @@
 session_start();
 session_unset();
 
-header("Location : ../public/inscription.php ");
+header("Location: ../public/connexion.php ");
 exit;

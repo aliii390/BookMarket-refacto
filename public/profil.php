@@ -162,7 +162,7 @@ session_start();
 
   <!-- mettre le process déconnexion -->
 
-  <a href="#"
+  <a href="../process/deconnexion-process.php"
      class="inline-block text-center bg-red-600 font-principale text-white px-6 py-2 rounded hover:bg-[#d45920] transition">
       Déconnexion
   </a>

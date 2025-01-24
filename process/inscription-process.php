@@ -26,6 +26,7 @@ if ($user->getRole() === "Vendeur") {
 
     $userPro->setId($idUserPro);
     $user->setUserPro($userPro);
+  
 }
 
 

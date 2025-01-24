@@ -34,7 +34,7 @@
       <div class="flex flex-col items-start lg:items-center lg:text-center">
         <h3 class="font-principale text-[18px] font-semibold">Les Couloirs du Destin</h3>
         <p class="font-principale text-[15px] text-gray-600">AUTEUR: Arthur Belmont</p>
-        <a href="#" class="bg-[#F5702B] w-[120px] text-white text-sm h-8 flex justify-center items-center rounded-lg hover:bg-[#e25e00] transition duration-300 mt-2">
+        <a href="./livre.php" class="bg-[#F5702B] w-[120px] text-white text-sm h-8 flex justify-center items-center rounded-lg hover:bg-[#e25e00] transition duration-300 mt-2">
           En savoir plus
         </a>
       </div>
