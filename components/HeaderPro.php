@@ -47,7 +47,7 @@
   <div class="hidden md:flex md:ml-6">
     <a href="../public/profilPro.php" class="w-[130px] h-8 bg-[#F5702B] text-white font-principale flex items-center justify-center  hover:bg-[#d45920] transition">
     <i class="fa-solid fa-user mr-2" style="color: #ffffff;"></i>
-    <?php  echo null !== $_SESSION['user']->getPrenom() ? $_SESSION['user']->getPrenom() : 'sa marche ap';  ?>
+    <?php  echo null !== $_SESSION['user']->getPrenom() ? $_SESSION['user']->getPrenom() : 'sa marche ap';   ?>
     </a>
   </div>
 

@@ -27,6 +27,8 @@ if ($user->getRole() === "Vendeur") {
     $userPro->setId($idUserPro);
     $user->setUserPro($userPro);
     
+    $_SESSION['user'] = $user;
+    
     header("Location: ../public/accueilPro.php");
     exit;
   

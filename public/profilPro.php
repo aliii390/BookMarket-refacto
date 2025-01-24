@@ -2,6 +2,9 @@
 require_once '../utils/autoloader.php';
 session_start();
 
+// var_dump($_SESSION['user']);
+// die();
+
 ?>
 
 
@@ -183,17 +186,17 @@ session_start();
         <form action="../../process/processUpdate.php" method="post" class="space-y-4">
     <div>
         <label for="nom" class="block text-gray-600 font-principale">Nom</label>
-        <input type="text" name="nom" id="nom" value="<?php echo $_SESSION['utilisateur']['nom'] ?? ''; ?>"
+        <input type="text" name="nom" id="nom" value="  <?php  echo null !== $_SESSION['user']->getNom() ? $_SESSION['user']->getNom() : 'sa marche ap';  ?>"
                class="w-full p-3 border border-gray-300 rounded-lg placeholder:font-principale focus:ring-2 focus:ring-orange-400">
     </div>
     <div>
         <label for="prenom" class="block text-gray-600 font-principale">Prénom</label>
-        <input type="text" name="prenom" id="prenom" value="<?php echo $_SESSION['utilisateur']['prenom'] ?? ''; ?>"
+        <input type="text" name="prenom" id="prenom" value="  <?php  echo null !== $_SESSION['user']->getPrenom() ? $_SESSION['user']->getPrenom() : 'sa marche ap';  ?>"
                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">
     </div>
     <div>
         <label for="email" class="block text-gray-600 font-principale">Email</label>
-        <input type="email" name="email" id="email" value="<?php echo $_SESSION['utilisateur']['email'] ?? ''; ?>"
+        <input type="email" name="email" id="email" value=" <?php  echo null !== $_SESSION['user']->getEmail() ? $_SESSION['user']->getEmail() : 'sa marche ap';  ?>"
                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">          
     </div>
 
@@ -214,14 +217,14 @@ session_start();
  
   <label for="email" class="block text-gray-600 font-principale">Nom entreprise: </label>
   <div>
-        <input type="text" name="companyName" id="companyName" value="<?php echo $_SESSION['utilisateur']['companyName'] ?? ''; ?>"
+        <input type="text" name="companyName" id="companyName" value=" mettre le nom de l'entreprise"
                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">
     </div>
 
 
     <label for="email" class="block text-gray-600 font-principale">Adresse entreprise: </label>
     <div>
-        <input type="text" name="companyAddress" id="companyAddress" value="<?php echo $_SESSION['utilisateur']['companyAddress'] ?? ''; ?>"
+        <input type="text" name="companyAddress" id="companyAddress" value="mettre l'adresse de l'entreprise"
                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">
     </div>
 
