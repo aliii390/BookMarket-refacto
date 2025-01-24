@@ -18,6 +18,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="../assets/js/burger.js"></script>
     <script defer src="../assets/js/popup.js"></script>
+    
     <link rel="stylesheet" href="../assets/css/output.css">
 </head>
 <body class="bg-[#FDEDD5]  text-gray-800 font-sans">
@@ -165,7 +166,7 @@ session_start();
 
   <!-- mettre le process déconnexion -->
 
-  <a href="../process/deconnexion-process.php"
+  <a  href="../process/deconnexion-process.php"
      class="inline-block text-center bg-red-600 font-principale text-white px-6 py-2 rounded hover:bg-[#d45920] transition">
       Déconnexion
   </a>

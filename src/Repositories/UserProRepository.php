@@ -30,6 +30,23 @@ class UserProRepository extends AbstractRepository{
     }
 
 
+    public function createUser(User $user): int
+{
+    $sql = "INSERT INTO user (nom, prenom, email, mdp, telephone, role, id_user_pro) VALUES (:nom, :prenom, :email, :mdp, :telephone, :role, :id_user_pro)";
+    
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute([
+        ':nom' => $user->getNom(),
+        ':prenom' => $user->getPrenom(),
+        ':email' => $user->getEmail(),
+        ':mdp' => $user->getMdp(),
+        ':telephone' => $user->getTelephone(),
+        ':role' => $user->getRole(),
+        ':id_user_pro' => $user->getUserPro() ? $user->getUserPro()->getId() : null
+    ]);
+    
+    return $this->pdo->lastInsertId();
+}
 
     public function createAdressePro( UserPro $userPro): int{
         $stmt = $this->pdo->prepare("INSERT INTO user_pro (nom_entreprise, adresse_entreprise) VALUES (:nom_entreprise, :adresse_entreprise)");
