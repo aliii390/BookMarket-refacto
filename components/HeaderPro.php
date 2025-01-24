@@ -45,7 +45,7 @@
 
   <!-- Bouton Connectez-vous -->
   <div class="hidden md:flex md:ml-6">
-    <a href="../public/profil.php" class="w-[130px] h-8 bg-[#F5702B] text-white font-principale flex items-center justify-center  hover:bg-[#d45920] transition">
+    <a href="../public/profilPro.php" class="w-[130px] h-8 bg-[#F5702B] text-white font-principale flex items-center justify-center  hover:bg-[#d45920] transition">
     <i class="fa-solid fa-user mr-2" style="color: #ffffff;"></i>
     <?php  echo null !== $_SESSION['user']->getPrenom() ? $_SESSION['user']->getPrenom() : 'sa marche ap';  ?>
     </a>
@@ -109,7 +109,7 @@
       </a>
     </li>
     <li class="flex justify-center">
-      <a href="../public/profil.php" 
+      <a href="../public/profilPro.php" 
          class="flex justify-center items-center h-10 w-40 px-3 py-2 text-sm 
                 text-white bg-[#2A3D37] hover:bg-[#109133] hover:text-white 
                 transition rounded-lg">

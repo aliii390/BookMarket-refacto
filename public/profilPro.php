@@ -146,7 +146,14 @@ session_start();
                     <span class="font-semibold text-gray-700">Email :</span>
                     <?php  echo null !== $_SESSION['user']->getEmail() ? $_SESSION['user']->getEmail() : 'sa marche ap';  ?>
                 </p>
-               <!-- enrteprise -->
+                <p class="text-lg mt-4">
+                    <span class="font-semibold text-gray-700">Adresse entreprise :</span>
+                  mettre les donné
+                </p>
+                <p class="text-lg mt-4">
+                    <span class="font-semibold text-gray-700">Nom entreprise :</span>
+                   mettre les donné
+                </p>
                 <div class="mt-6 flex gap-5 flex-col sm:flex-row sm:justify-center lg:justify-start lg:gap-8">
   <button id="openModalBtn"
           class="bg-[#F5702B] font-principale text-white px-6 py-2 rounded hover:bg-[#d45920] transition">
