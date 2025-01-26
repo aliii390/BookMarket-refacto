@@ -151,12 +151,16 @@ session_start();
                     <?php  echo null !== $_SESSION['user']->getEmail() ? $_SESSION['user']->getEmail() : 'sa marche ap';  ?>
                 </p>
                 <p class="text-lg mt-4">
+                    <span class="font-semibold text-gray-700">Numero de téléphone :</span>
+                    <?php  echo null !== $_SESSION['user']->getTelephone() ? $_SESSION['user']->getTelephone() : 'sa marche ap';  ?>
+                </p>
+                <p class="text-lg mt-4">
                     <span class="font-semibold text-gray-700">Adresse entreprise :</span>
-                  mettre les donné
+                    <?php  echo null !== $_SESSION['user']->getAdresseEntreprise()? $_SESSION['user']->getAdresseEntreprise() : 'sa marche ap';  ?>
                 </p>
                 <p class="text-lg mt-4">
                     <span class="font-semibold text-gray-700">Nom entreprise :</span>
-                   mettre les donné
+                    <?php  echo null !== $_SESSION['user']->getNomEntreprise()? $_SESSION['user']->getNomEntreprise() : 'sa marche ap';  ?>
                 </p>
                 <div class="mt-6 flex gap-5 flex-col sm:flex-row sm:justify-center lg:justify-start lg:gap-8">
   <button id="openModalBtn"
@@ -209,30 +213,30 @@ session_start();
 
 
 
-<?php if($_SESSION["user"]->getRole() === "Vendeur"){ 
+
   
-//   voir demain ici pour quand je clique sur le bon profil si c'est un vendeur sa m'affiche entreprise etc.. sinon sa m'affiche rien 
+<!-- //   voir demain ici pour quand je clique sur le bon profil si c'est un vendeur sa m'affiche entreprise etc.. sinon sa m'affiche rien  -->
 
-  ?>
 
- 
+
+<?php if ($_SESSION['user']->getRole() === "Vendeur"): ?>
   <label for="email" class="block text-gray-600 font-principale">Nom entreprise: </label>
   <div>
-        <input type="text" name="companyName" id="companyName" value=" mettre le nom de l'entreprise"
+        <input type="text" name="companyName" id="companyName" value=" <?php  echo null !== $_SESSION['user']->getNomEntreprise()? $_SESSION['user']->getNomEntreprise() : 'sa marche ap';  ?>"
                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">
     </div>
 
 
     <label for="email" class="block text-gray-600 font-principale">Adresse entreprise: </label>
     <div>
-        <input type="text" name="companyAddress" id="companyAddress" value="mettre l'adresse de l'entreprise"
+        <input type="text" name="companyAddress" id="companyAddress" value="<?php  echo null !== $_SESSION['user']->getAdresseEntreprise()? $_SESSION['user']->getAdresseEntreprise() : 'sa marche ap';  ?>"
                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">
     </div>
 
- 
+ <?php endif; ?>
 
 
-<?php }?>
+
     <button type="submit"
             class="w-full bg-[#F5702B] font-principale text-white py-3 rounded-lg hover:bg-[#d45920] transition">
         Enregistrer les modifications

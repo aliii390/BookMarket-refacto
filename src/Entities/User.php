@@ -118,4 +118,17 @@ final class User
 
         return $this;
     }
+
+
+
+
+    public function getNomEntreprise(): ?string
+    {
+        return $this->userPro ? $this->userPro->getNomEntreprise() : null;
+    }
+
+    public function getAdresseEntreprise(): ?string
+    {
+        return $this->userPro ? $this->userPro->getAdresseEntreprise() : null;
+    }
 }
