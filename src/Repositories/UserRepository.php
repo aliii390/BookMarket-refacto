@@ -59,7 +59,6 @@ class UserRepository extends AbstractRepository
     
         return $this->pdo->lastInsertId();
     }
-
     public function updateUser(User $user): bool
     {
         try {
@@ -79,7 +78,7 @@ class UserRepository extends AbstractRepository
     
             // Mettre à jour les informations de UserPro si elles existent
             if ($user->getUserPro() !== null) {
-                $sqlPro = "UPDATE user_pro SET nomEntreprise = :nomEntreprise, adresseEntreprise = :adresseEntreprise WHERE id = :id";
+                $sqlPro = "UPDATE user_pro SET nom_entreprise = :nomEntreprise, adresse_entreprise = :adresseEntreprise WHERE id = :id";
                 $stmtPro = $this->pdo->prepare($sqlPro);
                 $stmtPro->execute([
                     ':nomEntreprise' => $user->getUserPro()->getNomEntreprise(),

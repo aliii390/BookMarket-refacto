@@ -127,6 +127,11 @@ final class User
         return $this->userPro ? $this->userPro->getNomEntreprise() : null;
     }
 
+
+    // public function setNomEntreprise($userPro){
+
+    // }
+
     public function getAdresseEntreprise(): ?string
     {
         return $this->userPro ? $this->userPro->getAdresseEntreprise() : null;

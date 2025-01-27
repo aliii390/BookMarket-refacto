@@ -41,4 +41,22 @@ class UserProRepository extends AbstractRepository
         ]);
         return $this->pdo->lastInsertId();
     }
+
+
+    public function updateUserPro(UserPro $userPro): bool
+    {
+        try {
+            $sql = "UPDATE user_pro SET nom_entreprise = :nomEntreprise, adresse_entreprise = :adresseEntreprise WHERE id = :id";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([
+                ':nomEntreprise' => $userPro->getNomEntreprise(),
+                ':adresseEntreprise' => $userPro->getAdresseEntreprise(),
+                ':id' => $userPro->getId()
+            ]);
+
+            return true;
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
 }

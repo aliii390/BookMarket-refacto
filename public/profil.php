@@ -195,9 +195,14 @@ session_start();
     </div>
     <div>
         <label for="email" class="block text-gray-600 font-principale">Numero de téléphone</label>
-        <input type="text" name="email" id="email" value=" <?php  echo null !== $_SESSION['user']->getTelephone() ? $_SESSION['user']->getTelephone() : 'sa marche ap';  ?>"
+        <input type="text" name="telephone" id="telephone" value=" <?php  echo null !== $_SESSION['user']->getTelephone() ? $_SESSION['user']->getTelephone() : 'sa marche ap';  ?>"
                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">          
     </div>
+    <!-- <div>
+        <label for="email" class="block text-gray-600 font-principale">Mdp</label>
+        <input type="text" name="telephone" id="telephone" value=" <?php  echo null !== $_SESSION['user']->getTelephone() ? $_SESSION['user']->getTelephone() : 'sa marche ap';  ?>"
+               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">          
+    </div> -->
 
 
 
@@ -207,12 +212,11 @@ session_start();
 
 
 
-<?php if($_SESSION["user"]->getRole() === "Vendeur"){ 
+
   
-//   voir demain ici pour quand je clique sur le bon profil si c'est un vendeur sa m'affiche entreprise etc.. sinon sa m'affiche rien 
+<!-- //   voir demain ici pour quand je clique sur le bon profil si c'est un vendeur sa m'affiche entreprise etc.. sinon sa m'affiche rien  -->
 
-  ?>
-
+<!-- 
  
   <label for="email" class="block text-gray-600 font-principale">Nom entreprise: </label>
   <div>
@@ -225,12 +229,10 @@ session_start();
     <div>
         <input type="text" name="companyAddress" id="companyAddress" value="<?php echo $_SESSION['utilisateur']['companyAddress'] ?? ''; ?>"
                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">
-    </div>
+    </div> -->
 
  
 
-
-<?php }?>
     <button type="submit"
             class="w-full bg-[#F5702B] font-principale text-white py-3 rounded-lg hover:bg-[#d45920] transition">
         Enregistrer les modifications

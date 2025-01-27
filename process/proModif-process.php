@@ -20,26 +20,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['telephone'])) {
         $user->setTelephone($_POST['telephone']);
-    } else {
-       
-        $user->setTelephone(''); 
     }
 
-    // if (isset($_POST['nomEntreprise']) && $user->getUserPro() !== null) {
-    //     $user->getUserPro()->setNomEntreprise($_POST['nomEntreprise']);
-    // }
+    if ($user->getUserPro() !== null) {
+        $userPro = $user->getUserPro();
 
-    // if (isset($_POST['adresseEntreprise']) && $user->getUserPro() !== null) {
-    //     $user->getUserPro()->setAdresseEntreprise($_POST['adresseEntreprise']);
-    // }
+        if (isset($_POST['companyName'])) {
+            $userPro->setNomEntreprise($_POST['companyName']);
+        }
+
+        if (isset($_POST['companyAddress'])) {
+            $userPro->setAdresseEntreprise($_POST['companyAddress']);
+        }
+
+        $userProRepository = new UserProRepository();
+        $userProRepository->updateUserPro($userPro);
+    }
 
     $userRepository = new UserRepository();
     $userRepository->updateUser($user);
 
-   
     $_SESSION['user'] = $user;
 
-    header('Location: ../public/profil.php');
+
+    header('Location: ../public/profilPro.php');
     exit();
- }
+}
 ?>

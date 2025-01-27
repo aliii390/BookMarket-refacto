@@ -43,13 +43,30 @@ final class UserPro
         return $this->nomEntreprise;
     }
 
+
+
+    public function setNomEntreprise(string $nomEntreprise): self
+    {
+        $this->nomEntreprise = $nomEntreprise;
+        return $this;
+    }
+
     /**
      * Get the value of adresse_entreprise
      */
     public function getAdresseEntreprise() : string
     {
         return $this->adresseEntreprise;
+
     }
+
+    public function setAdresseEntreprise(string $adresseEntreprise): self{
+        $this->adresseEntreprise = $adresseEntreprise;
+        return $this;
+    }
+
+
+    
 
    
 }
