@@ -177,20 +177,25 @@ session_start();
             <i class="fa-solid fa-times text-xl"></i>
         </button>
         <h2 class="text-xl font-principale text-gray-700 mb-4">Modifier le profil</h2>
-        <form action="../../process/processUpdate.php" method="post" class="space-y-4">
+        <form action="../process/clientModif-process.php" method="post" class="space-y-4">
     <div>
         <label for="nom" class="block text-gray-600 font-principale">Nom</label>
-        <input type="text" name="nom" id="nom" value="<?php echo $_SESSION['utilisateur']['nom'] ?? ''; ?>"
+        <input type="text" name="nom" id="nom" value="<?php  echo null !== $_SESSION['user']->getNom() ? $_SESSION['user']->getNom() : 'sa marche ap';  ?>"
                class="w-full p-3 border border-gray-300 rounded-lg placeholder:font-principale focus:ring-2 focus:ring-orange-400">
     </div>
     <div>
         <label for="prenom" class="block text-gray-600 font-principale">Prénom</label>
-        <input type="text" name="prenom" id="prenom" value="<?php echo $_SESSION['utilisateur']['prenom'] ?? ''; ?>"
+        <input type="text" name="prenom" id="prenom" value=" <?php  echo null !== $_SESSION['user']->getPrenom() ? $_SESSION['user']->getPrenom() : 'sa marche ap';  ?>"
                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">
     </div>
     <div>
         <label for="email" class="block text-gray-600 font-principale">Email</label>
-        <input type="email" name="email" id="email" value="<?php echo $_SESSION['utilisateur']['email'] ?? ''; ?>"
+        <input type="email" name="email" id="email" value=" <?php  echo null !== $_SESSION['user']->getEmail() ? $_SESSION['user']->getEmail() : 'sa marche ap';  ?>"
+               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">          
+    </div>
+    <div>
+        <label for="email" class="block text-gray-600 font-principale">Numero de téléphone</label>
+        <input type="text" name="email" id="email" value=" <?php  echo null !== $_SESSION['user']->getTelephone() ? $_SESSION['user']->getTelephone() : 'sa marche ap';  ?>"
                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 placeholder:font-principale">          
     </div>
 

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.php",
- "scripts": {
-  "build:css": "tailwindcss build -i  ./assets/css/input.css -o ./assets/css/output.css --watch"
-},
+  "scripts": {
+    "build:css": "tailwindcss build -i  ./assets/css/input.css -o ./assets/css/output.css --watch"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

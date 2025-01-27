@@ -131,4 +131,27 @@ final class User
     {
         return $this->userPro ? $this->userPro->getAdresseEntreprise() : null;
     }
+
+  
+
+    public function setNom ($nom){
+        $this->nom = $nom;
+        return $this;
+    }
+
+    public function setPrenom($prenom){
+        $this->prenom = $prenom;
+        return $this;
+    }
+
+    public function setTelephone($telephone){
+        $this->telephone = $telephone;
+        return $this;
+    }
+
+    public function setEmail($email){
+        $this->email = $email;
+        return $this;
+    }
+
 }

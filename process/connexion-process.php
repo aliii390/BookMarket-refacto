@@ -1,4 +1,3 @@
-
 <?php
 
 require_once '../utils/autoloader.php';
@@ -6,29 +5,33 @@ require_once '../utils/autoloader.php';
 session_start();
 
 $userRepository = new UserRepository();
+// $userProRepository = new UserProRepository();
 
-
+// Recherche de l'utilisateur par email
 $user = $userRepository->findByEmail($_POST['email']);
 
-
-// pareil pour l'email
+// Vérification : l'utilisateur existe-t-il ?
 if (!$user) {
     header("Location: ../public/connexion.php?error=emailoumdpinvalid");
     exit;
 }
 
-// si mdp incorrect je le renvoie sur la page de co avc une erreur
+// Vérification du mot de passe
 if (!password_verify($_POST['mdp'], $user->getMdp())) {
-
     header("Location: ../public/connexion.php?error=emailoumdpinvalid");
     exit;
 }
 
 $_SESSION['user'] = $user;
 
+// Si l'utilisateur est un vendeur, redirection vers la page pro
+if ($user->getRole() === "Vendeur") {
+    header("Location: ../public/accueilPro.php");
+} else {
+    header("Location: ../public/accueil.php");
+}
 
-header("Location: ../public/accueil.php");
+// Redirection par défaut pour les autres utilisateurs
+
+
 exit;
-
-
-
