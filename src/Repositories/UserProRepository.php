@@ -59,4 +59,9 @@ class UserProRepository extends AbstractRepository
             throw $e;
         }
     }
+
+
+    public function PostezLivre(){
+        // fonction pour postez des livres
+    }
 }
