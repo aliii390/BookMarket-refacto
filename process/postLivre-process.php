@@ -35,5 +35,5 @@ $postLivreRepo->postezLivre($postLivre);
 // TODO utiliser le repository de postlive pour save en BDD les bonnes informations
 // faire sa apres la pause 
 
-header("Location: ../public/accueil.php");
+header("Location: ../public/accueilPro.php");
 exit;
