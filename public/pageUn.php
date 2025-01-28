@@ -45,7 +45,7 @@ $livres = $postLivreRepo->getAllLivres();
       <div class="flex flex-col items-start lg:items-center lg:text-center">
         <h3 class="font-principale text-[18px] font-semibold"><?php echo $livre['titre'] ?></h3>
         <p class="font-principale text-[15px] text-gray-600">AUTEUR: <?php echo $livre['auteur']?></p>
-        <a href="./livreConnect.php?id=<?php echo $livre['id']?>" class="bg-[#F5702B] w-[120px] text-white text-sm h-8 flex justify-center items-center rounded-lg hover:bg-[#e25e00] transition duration-300 mt-2">
+        <a href="./livre.php?id=<?php echo $livre['id']?>" class="bg-[#F5702B] w-[120px] text-white text-sm h-8 flex justify-center items-center rounded-lg hover:bg-[#e25e00] transition duration-300 mt-2">
           En savoir plus
         </a>
       </div>

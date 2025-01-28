@@ -8,6 +8,19 @@ class PostLivreRepository
         $this->pdo = Database::getConnection();
     }
 
+
+    // rajout de fonction pour voir les bon livres en fonction de leur id 
+
+    public function findById(int $id): ?array
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM livre WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+        $livre = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $livre ?: null;
+    }
+
+
     public function postezLivre(PostLivre $postLivre): bool
     {
         try {
