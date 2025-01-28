@@ -8,12 +8,12 @@ class PostLivreRepository
         $this->pdo = Database::getConnection();
     }
 
-    public function PostezLivre(PostLivre $postLivre): bool
+    public function postezLivre(PostLivre $postLivre): bool
     {
         try {
             $stmt = $this->pdo->prepare("INSERT INTO livre (id_user_pro, titre, img_path, description, prix, etat_livre, auteur) VALUES (:id_user_pro, :titre, :img_path, :description, :prix, :etat_livre, :auteur)");
             $stmt->execute([
-                ':id_user_pro' => $postLivre->getIdUserPro(),
+                ':id_user_pro' => $postLivre->getUserPro()->getId(),
                 ':titre' => $postLivre->getTitre(),
                 ':img_path' => $postLivre->getImgPath(),
                 ':description' => $postLivre->getDescription(),
@@ -26,5 +26,15 @@ class PostLivreRepository
             echo "Erreur de base de données : " . $error->getMessage();
             return false;
         }
+    }
+
+
+
+    public function getAllLivres(): array
+    {
+        $sql = "SELECT * FROM livre";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

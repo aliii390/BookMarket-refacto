@@ -4,7 +4,7 @@
 final class PostLivre{
 
  
-    private UserPro $idUserPro;
+    private UserPro $userPro;
     // private string $urlLivre ;
     private string $titre ;
     private string $imgPath;
@@ -15,10 +15,10 @@ final class PostLivre{
     private string $auteur ;
     
 
-    public function __construct( int $idUserPro ,  string $titre , string $imgPath ,   string $description , int $prix , string $etatLivre , string $auteur )
+    public function __construct( UserPro $userPro ,  string $titre , string $imgPath ,   string $description , int $prix , string $etatLivre , string $auteur )
     {
        
-        $this->idUserPro = $idUserPro;
+        $this->userPro = $userPro;
         // $this->urlLivre = $urlLivre;
         $this->titre = $titre;
         $this->imgPath = $imgPath;
@@ -35,9 +35,9 @@ final class PostLivre{
     /**
      * Get the value of idUserPro
      */ 
-    public function getIdUserPro()
+    public function getUserPro(): UserPro
     {
-        return $this->idUserPro;
+        return $this->userPro;
     }
 
     /**
@@ -45,9 +45,9 @@ final class PostLivre{
      *
      * @return  self
      */ 
-    public function setIdUserPro($idUserPro)
+    public function setIdUserPro(UserPro $userPro): self
     {
-        $this->idUserPro = $idUserPro;
+        $this->userPro = $userPro;
 
         return $this;
     }

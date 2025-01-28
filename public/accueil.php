@@ -5,6 +5,8 @@ include_once '../utils/autoloader.php';
 session_start();
 // var_dump($_SESSION);
 // die();
+$postLivreRepo = new PostLivreRepository();
+$livres = $postLivreRepo->getAllLivres();
 
 ?>
 
@@ -19,6 +21,7 @@ session_start();
 <html lang="en">
 
 <?php  require_once '../components/HeaderConnect.php' ?>
+
 
 <body>
 
@@ -41,19 +44,22 @@ session_start();
 
   <div class="flex flex-col gap-8 items-center lg:flex-row lg:justify-center lg:gap-12 lg:w-full">
     <!-- Article 1 -->
+    <?php foreach($livres as $livre): ?>
     <article class="flex gap-6 justify-center items-center bg-white rounded-lg p-4 shadow-md lg:flex-col lg:gap-4 lg:items-center lg:w-[300px]">
-      <img src="../assets/img/livre.jpg" alt="Livre" class="w-[150px] h-auto rounded-lg shadow-lg">
+      
+    <img src="<?php echo $livre['img_path']; ?>" alt="Livre" class="w-[150px] h-auto rounded-lg shadow-lg">
       <div class="flex flex-col items-start lg:items-center lg:text-center">
-        <h3 class="font-principale text-[18px] font-semibold">Les Couloirs du Destin</h3>
-        <p class="font-principale text-[15px] text-gray-600">AUTEUR: Arthur Belmont</p>
-        <a href="./livreConnect.php" class="bg-[#F5702B] w-[120px] text-white text-sm h-8 flex justify-center items-center rounded-lg hover:bg-[#e25e00] transition duration-300 mt-2">
+        <h3 class="font-principale text-[18px] font-semibold"><?php echo $livre['titre'] ?></h3>
+        <p class="font-principale text-[15px] text-gray-600">AUTEUR: <?php echo $livre['auteur']?></p>
+        <a href="./livreConnect.php?id=<?php echo $livre['id']?>" class="bg-[#F5702B] w-[120px] text-white text-sm h-8 flex justify-center items-center rounded-lg hover:bg-[#e25e00] transition duration-300 mt-2">
           En savoir plus
         </a>
       </div>
     </article>
+    <?php endforeach; ?>
 
     <!-- Article 2 -->
-    <article class="flex gap-6 justify-center items-center bg-white rounded-lg p-4 shadow-md lg:flex-col lg:gap-4 lg:items-center lg:w-[300px]">
+    <!-- <article class="flex gap-6 justify-center items-center bg-white rounded-lg p-4 shadow-md lg:flex-col lg:gap-4 lg:items-center lg:w-[300px]">
       <img src="../assets/img/livre.jpg" alt="Livre" class="w-[150px] h-auto rounded-lg shadow-lg">
       <div class="flex flex-col items-start lg:items-center lg:text-center">
         <h3 class="font-principale text-[18px] font-semibold">Les Couloirs du Destin</h3>
@@ -64,7 +70,7 @@ session_start();
       </div>
     </article>
 
-    <!-- Article 3 -->
+     Article 3 
     <article class="flex gap-6 justify-center items-center bg-white rounded-lg p-4 shadow-md lg:flex-col lg:gap-4 lg:items-center lg:w-[300px]">
       <img src="../assets/img/livre.jpg" alt="Livre" class="w-[150px] h-auto rounded-lg shadow-lg">
       <div class="flex flex-col items-start lg:items-center lg:text-center">
@@ -74,7 +80,7 @@ session_start();
           En savoir plus
         </a>
       </div>
-    </article>
+    </article> -->
   </div>
 </section>
 
