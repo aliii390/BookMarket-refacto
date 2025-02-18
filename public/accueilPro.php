@@ -104,7 +104,7 @@ $livres = $postLivreRepo->getAllLivres();
   <!-- Logo dans le menu -->
   <div class="text-center py-6 border-b border-gray-300">
     <!-- <img src="../assets/img/logo.png" alt="Logo" class="w-36"> -->
-     <img src="../assets/img/logo.png" alt="" class="w-36">
+     <img src="../assets/img/LogoItem.png" alt="" class="w-36">
   </div>
 
   <!-- Liens du menu -->
