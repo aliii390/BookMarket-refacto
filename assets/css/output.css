@@ -649,10 +649,6 @@ video {
   margin-top: auto;
 }
 
-.mt-11{
-  margin-top: 2.75rem;
-}
-
 .block{
   display: block;
 }
@@ -926,14 +922,6 @@ video {
 
 .p-6{
   padding: 1.5rem;
-}
-
-.p-52{
-  padding: 13rem;
-}
-
-.p-12{
-  padding: 3rem;
 }
 
 .px-3{
@@ -1319,10 +1307,6 @@ video {
     margin-top: 9rem;
   }
 
-  .lg\:mt-52{
-    margin-top: 13rem;
-  }
-
   .lg\:h-\[400px\]{
     height: 400px;
   }
@@ -1373,10 +1357,6 @@ video {
 
   .lg\:justify-center{
     justify-content: center;
-  }
-
-  .lg\:justify-around{
-    justify-content: space-around;
   }
 
   .lg\:gap-10{

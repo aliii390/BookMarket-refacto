@@ -14,7 +14,7 @@ $livre = $postLivreRepo->findById($livreId);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php require_once '../components/HeaderConnect.php'; ?>
+  <?php require_once '../components/Header.php'; ?>
 </head>
 <body class="bg-[#FDEDD5] flex flex-col min-h-screen">
 
